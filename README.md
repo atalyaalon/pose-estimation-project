@@ -44,7 +44,15 @@ sudo docker-compose build
 
 Note: we did not use docker-compose in this stage since docker compose does not suppor NVIDIA GPUs yet - see https://github.com/docker/compose/issues/6691
 
-7. To find the trained models in the docker:
-`sudo docker exec -it openpifpaf bash`
+7. To find the trained models in the docker - start the openpifpaf container, and check the outputs directory:
+```sh
+sudo docker start openpifpaf
+sudo docker exec -it openpifpaf bash
+```
 and run inside docker:
 `ls outputs`
+
+(To exit the container use ctrl-D)
+
+8. To stop the openpifpaf container run:
+`sudo docker stop openpifpaf`
