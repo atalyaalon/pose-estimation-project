@@ -45,11 +45,11 @@ sudo docker-compose build
 ```
 
 9. Run the docker file:
-`sudo docker run --gpus all --shm-size=100gb bestteam/openpifpaf:latest`
+`sudo docker run --gpus all --shm-size=100gb --name openpifpaf bestteam/openpifpaf:latest`
 
 Note: we did not use docker-compose in this stage since docker compose does not suppor NVIDIA GPUs yet - see https://github.com/docker/compose/issues/6691
 
-10. To find the trained models in the docker - start the openpifpaf container, and check the outputs directory:
+10. To find the trained models or logs in the docker - start the openpifpaf container, and check the outputs directory:
 ```sh
 sudo docker start openpifpaf
 sudo docker exec -it openpifpaf bash
