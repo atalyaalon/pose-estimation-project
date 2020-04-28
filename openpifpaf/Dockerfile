@@ -35,6 +35,6 @@ RUN mkdir outputs
 # a full pip reinstall
 
 
-RUN pip3 install torch==1.4.0 torchvision==0.4.0 openpifpaf==0.9
+RUN pip3 install torch==1.4.0 torchvision==0.5.0 openpifpaf==0.9
 
 CMD python -m openpifpaf.train --lr=1e-3  --momentum=0.95  --epochs=7  --lr-decay 120 140   --batch-size=16 --basenet=resnet101   --head-quad=1 --headnets pif paf paf25   --square-edge=401   --lambdas 10 1 1 15 1 1 15 1 1 --loader-workers=16 --n-images=32
