@@ -48,4 +48,5 @@ CMD python3 -m openpifpaf.train \
         --regression-loss=laplace \
         --lambdas 30 2 2 50 3 3 \
         --freeze-base=1 \
-        --n-images=40000
+        --n-images=40000 \
+        --debug
