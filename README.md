@@ -17,34 +17,39 @@ sudo apt-get install docker-ce docker-compose
 3. check Client docker engine version >= 19.03 using the following command:
 `docker version`
 
-2. On Ubuntu 18.04 or 16.04 machines with Nvidia GPUs, run the following commands - taken from [nvidia-docker](https://github.com/NVIDIA/nvidia-docker])
+4. On Ubuntu 18.04 or 16.04 machines with Nvidia GPUs, run the following commands - taken from [nvidia-docker](https://github.com/NVIDIA/nvidia-docker])
 ```sh
 # Add the package repositories
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
 curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
+sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit nvidia-cuda-toolkit
 sudo systemctl restart docker
 ```
 
-3. pull the docker files code:
+5. Make sure that the following command is running:
+`nvidia-smi`
+If not, try to reboot the machine using the reboot command:
+`reboot`
+
+6. pull the docker files code:
 `git clone https://github.com/atalyaalon/pose-estimation-project.git`
 
-4. Optional: run the following command in tmux - run in shell:
+7. Optional: run the following command in tmux - run in shell:
 `tmux`
 
-5. Build the docker file:
+8. Build the docker file:
 ```sh
 cd pose-estimation-project/openpifpaf/
 sudo docker-compose build
 ```
 
-6. Run the docker file:
+9. Run the docker file:
 `sudo docker run --gpus all --shm-size=100gb bestteam/openpifpaf`
 
 Note: we did not use docker-compose in this stage since docker compose does not suppor NVIDIA GPUs yet - see https://github.com/docker/compose/issues/6691
 
-7. To find the trained models in the docker - start the openpifpaf container, and check the outputs directory:
+10. To find the trained models in the docker - start the openpifpaf container, and check the outputs directory:
 ```sh
 sudo docker start openpifpaf
 sudo docker exec -it openpifpaf bash
@@ -54,5 +59,5 @@ and run inside docker:
 
 (To exit the container use ctrl-D)
 
-8. To stop the openpifpaf container run:
+11. To stop the openpifpaf container run:
 `sudo docker stop openpifpaf`
