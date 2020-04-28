@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  openpifpaf:
+    build: .
+    container_name: openpifpaf
+    image: bestteam/openpifpaf:latest
+    restart: always
+    environment:
+      - CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6
