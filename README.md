@@ -45,7 +45,7 @@ sudo docker-compose build
 ```
 
 9. Run the docker file:
-`sudo docker run --gpus all --shm-size=100gb bestteam/openpifpaf`
+`sudo docker run --gpus all --shm-size=100gb bestteam/openpifpaf:latest`
 
 Note: we did not use docker-compose in this stage since docker compose does not suppor NVIDIA GPUs yet - see https://github.com/docker/compose/issues/6691
 
