@@ -35,7 +35,7 @@ RUN mkdir outputs
 # a full pip reinstall
 
 
-RUN pip3 install torch==1.4.0 torchvision==0.5.0 openpifpaf==0.9
+RUN pip3 install torch==1.4.0 torchvision==0.5.0 openpifpaf==0.9 pycocotools
 
 # used running command from openpifpaf 0.9.0 version README: https://github.com/vita-epfl/openpifpaf/blob/4d585f69ba660402d56e39638900290240cc266b/README.md
 
