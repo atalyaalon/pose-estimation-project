@@ -8,9 +8,4 @@ services:
     restart: always
     environment:
       - CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6
-
-volumes:
-    - type: tmpfs
-        target: /dev/shm
-        tmpfs:
-        size: 16000000000 # ~16gb
+    shm_size: '16gb'
