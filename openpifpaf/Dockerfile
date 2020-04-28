@@ -39,7 +39,7 @@ RUN pip3 install torch==1.4.0 torchvision==0.5.0 openpifpaf==0.9 Cython pycocoto
 
 # used running command from openpifpaf 0.9.0 version README: https://github.com/vita-epfl/openpifpaf/blob/4d585f69ba660402d56e39638900290240cc266b/README.md
 
-CMD python -m openpifpaf.train \
+CMD python3 -m openpifpaf.train \
         --lr=1e-3 \
         --momentum=0.95 \
         --epochs=7 \
