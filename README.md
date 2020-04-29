@@ -35,7 +35,7 @@ If not, try to reboot the machine using the reboot command:
 6. pull the docker files code:
 `git clone https://github.com/atalyaalon/pose-estimation-project.git`
 
-7. Optional: run the following command in tmux - run in shell:
+7. Recommended: run the following command in tmux - run in shell:
 `tmux`
 
 8. Build the docker file:
